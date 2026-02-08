@@ -1,15 +1,15 @@
 const BACKGROUND = "#101010"
 const FOREGROUND = "#50FF50"
 
-console.log(game)
-game.width = 800
-game.height = 800
-const ctx = game.getContext("2d")
+console.log(webgl)
+webgl.width = 800
+webgl.height = 800
+const ctx = webgl.getContext("2d")
 console.log(ctx)
 
 function clear() {
     ctx.fillStyle = BACKGROUND
-    ctx.fillRect(0, 0, game.width, game.height)
+    ctx.fillRect(0, 0, webgl.width, webgl.height)
 }
 
 function point({x, y}) {
@@ -30,8 +30,8 @@ function line(p1, p2) {
 function screen(p) {
     // -1..1 => 0..2 => 0..1 => 0..w
     return {
-        x: (p.x + 1)/2*game.width,
-        y: (1 - (p.y + 1)/2)*game.height,
+        x: (p.x + 1)/2*webgl.width,
+        y: (1 - (p.y + 1)/2)*webgl.height,
     }
 }
 
